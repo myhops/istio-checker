@@ -7,7 +7,7 @@ test:
 
 .PHONY: bin
 bin: fmt vet
-	go build -o bin/{{ .PluginName }} github.com/{{ .Owner }}/{{ .Repo }}/cmd/plugin
+	go build -o bin/istio-checker github.com/myhops/istio-checker/cmd/plugin
 
 .PHONY: fmt
 fmt:
