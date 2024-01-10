@@ -2,6 +2,7 @@ package plugin
 
 import (
 	"fmt"
+	"time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
@@ -26,6 +27,7 @@ func RunPlugin(configFlags *genericclioptions.ConfigFlags, outputCh chan string)
 
 	for _, namespace := range namespaces.Items {
 		outputCh <- fmt.Sprintf("Namespace %s", namespace.Name)
+		time.Sleep(time.Second)
 	}
 
 	return nil

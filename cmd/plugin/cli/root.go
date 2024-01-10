@@ -31,7 +31,7 @@ func RootCmd() *cobra.Command {
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			log := logger.NewLogger()
-			log.Info("")
+			log.Info("starting root")
 
 			s := spin.New()
 			finishedCh := make(chan bool, 1)
@@ -62,7 +62,7 @@ func RootCmd() *cobra.Command {
 				return errors.Unwrap(err)
 			}
 
-			log.Info("")
+			log.Info("done")
 
 			return nil
 		},
